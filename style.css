@@ -1,0 +1,43 @@
+*{
+    font-size: 20;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.content{
+    width: 50%;
+}
+
+.ejercicio
+{
+    width: 80%;
+    height: 30%;
+    background-color:chartreuse;
+    border-radius: 15px;
+    border: 2px solid green;
+    align-content: center;
+    padding: 5px;
+}
+
+.tema{
+    text-align: center;
+}
+
+.respuesta{
+    width: 100%;
+    padding-top: 20px;
+    align-content: center;
+    text-align: center;
+    margin-left: -10%;
+}
+
+.tabla
+{
+    border: 2px solid crimson;
+    align-content: center;
+    margin-left: 30%;
+}
+
+td {
+    border: 2px solid crimson
+    ;
+}

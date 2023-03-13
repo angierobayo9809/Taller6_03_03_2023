@@ -3,44 +3,17 @@ export default {
     value(){
         //return this.el.innerHTML;
     },
-    setValue(annos){
-        let sueldoTotal =0;
-        let sueldofijo =14400000;
-        let aumento =0;
-        for(let x =1; x <= annos; x++)
-        {
-            if (x < 3)
-            {
-                aumento = sueldofijo*(3/100);
-                sueldofijo = sueldofijo +aumento;
-                sueldoTotal += sueldofijo;
-                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
-            }
-            else if (x < 5 && x>= 3)
-            {
-                aumento = sueldofijo*(5/100);
-                sueldofijo = sueldofijo +aumento;
-                sueldoTotal += sueldofijo;
-                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
-            }
-            else if (x < 10 && x>= 5)
-            {
-                aumento = sueldofijo*(7/100);
-                sueldofijo = sueldofijo +aumento;
-                sueldoTotal += sueldofijo;
-                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
-            }
-            else if (x > 10)
-            {
-                aumento = sueldofijo*(10/100);
-                sueldofijo = sueldofijo +aumento;
-                sueldoTotal += sueldofijo;
-                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
-            }
-            
-            this.el.insertAdjacentHTML("beforeend","<br>")
-        }
-        this.el.insertAdjacentHTML("beforeend","<br>")
-        this.el.insertAdjacentText("beforeend",`El sueldo total del trabajador es de:${sueldoTotal.toFixed(2)}`)
+    setValue(caracter){
+        let texto ="";
+        if (caracter == Number(caracter))
+            texto ="Es un número";
+        else if (caracter === caracter.toUpperCase() && caracter.charAt(0).match(/[a-zA-Z]/))
+            texto ="Es una letra mayúscula";
+        else if (caracter === caracter.toLowerCase()  && caracter.charAt(0).match(/[a-zA-Z]/))
+            texto ="Es una letra minúscula";
+        else
+            texto ="No es un carácter alfanumérico";
+
+        this.el.insertAdjacentText("beforeend",`${texto}`)
     },
 }

@@ -1,5 +1,5 @@
 import main from './js/main.js'
 
-let annos  =prompt("Ingrese su antiguedad en años");
+let caracter  =prompt("Ingrese un caracter");
 
-main.setValue(annos);
+main.setValue(caracter);

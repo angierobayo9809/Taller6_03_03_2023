@@ -3,19 +3,44 @@ export default {
     value(){
         //return this.el.innerHTML;
     },
-    setValue(precio){
-        let impuesto =0;
-        let valTotal =0;
-        if (precio > 150000)
-            impuesto =19;
-        else
-            impuesto =16;
-
-        valTotal = Number(precio)+(Number(precio) * (impuesto/100));
-        this.el.insertAdjacentText("beforeend",`Precio: ${precio} `)
-        this.el.insertAdjacentHTML("beforeend","<br>");
-        this.el.insertAdjacentText("beforeend",`Impuesto: ${impuesto}`)
-        this.el.insertAdjacentHTML("beforeend","<br>");
-        this.el.insertAdjacentText("beforeend",`Valor Total: ${valTotal} `)
+    setValue(annos){
+        let sueldoTotal =0;
+        let sueldofijo =14400000;
+        let aumento =0;
+        for(let x =1; x <= annos; x++)
+        {
+            if (x < 3)
+            {
+                aumento = sueldofijo*(3/100);
+                sueldofijo = sueldofijo +aumento;
+                sueldoTotal += sueldofijo;
+                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
+            }
+            else if (x < 5 && x>= 3)
+            {
+                aumento = sueldofijo*(5/100);
+                sueldofijo = sueldofijo +aumento;
+                sueldoTotal += sueldofijo;
+                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
+            }
+            else if (x < 10 && x>= 5)
+            {
+                aumento = sueldofijo*(7/100);
+                sueldofijo = sueldofijo +aumento;
+                sueldoTotal += sueldofijo;
+                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
+            }
+            else if (x > 10)
+            {
+                aumento = sueldofijo*(10/100);
+                sueldofijo = sueldofijo +aumento;
+                sueldoTotal += sueldofijo;
+                this.el.insertAdjacentText("beforeend",`Año ${x}: Sueldo: $${sueldofijo.toFixed(2)} Aumento: $${aumento.toFixed(2)}`)
+            }
+            
+            this.el.insertAdjacentHTML("beforeend","<br>")
+        }
+        this.el.insertAdjacentHTML("beforeend","<br>")
+        this.el.insertAdjacentText("beforeend",`El sueldo total del trabajador es de:${sueldoTotal.toFixed(2)}`)
     },
 }

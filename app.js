@@ -1,5 +1,5 @@
 import main from './js/main.js'
 
-let precio  =prompt("Ingrese el precio base");
+let annos  =prompt("Ingrese su antiguedad en años");
 
-main.setValue(precio);
+main.setValue(annos);
